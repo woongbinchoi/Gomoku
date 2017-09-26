@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Woongbin Choi</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/omok.css"/>
+</head>
+<body>
+	<div id="container">
+		<div id="title">
+			<h2>Play Omok!</h2>
+		</div>
+
+		<div id="turnaboutdiv">
+			<div id="turndiv">
+				<div id="turnpage">
+					<h2><span id="turnspan"></span></h2>
+				</div>
+			</div>
+
+			<div id="aboutdiv">
+				<button id="aboutbutton" onclick="aboutbuttonsetting()"><h2>About<h2></button>
+			</div>
+		</div>
+
+		<div id="canvasdiv"></div>
+
+		<!-- for setting: 
+			start a new game with the same setting
+			start a game with different setting
+			undo button
+
+			setting:
+				black/white dol
+				background color 
+				AI or PvP or PvP over the internet (this will be done later)
+				width/height
+		
+		"Who"'s turn div
+		About-->
+		<div id="infodiv">
+			<p><span id="cord"></span></p>
+			<button id="startbutton" onclick="startgame()">Start</button>
+
+			<div id="undocontainer">
+				<button id="undobutton" onclick="undodol()">Undo</button>
+			</div>
+
+			<div id="startmenu">
+				<div id="radiobox">
+					<div id="playerselect">
+						<h3>Player</h3>
+						<form>
+							<input type="radio" name="player" value="pvp" checked>PvP
+							<input type="radio" name="player" value="ai" disabled>AI
+						</form>
+					</div>
+					<div id="size">
+						<h3>Size</h3>
+						<form>
+							<input type="radio" name="size" value="10" checked>10 x 10
+							<input type="radio" name="size" value="15">15 x 15
+							<input type="radio" name="size" value="20">20 x 20
+						</form>
+					</div>
+					<div id="color">
+						<h3>color</h3>
+						<form>
+							<input type="radio" name="color" value="0" checked>White
+							<input type="radio" name="color" value="1">Black
+						</form>
+					</div>
+				</div>
+
+				<button id="restartbutton" onclick="startgame()">New Game</button>
+			</div>
+
+		</div>
+
+		<div id="aboutalertcontainer">
+			<div id="aboutalertdiv">
+				<div id="abouttitlediv">
+					<h2>About</h2>
+					<img id="closeimg" src="src/closebutton.png" onclick="closebutton()">
+					<hr style="color: #e4dcd5;" />
+				</div>
+				<div id="aboutcontentdiv">
+					<h3>How to Play</h3>
+					<p>Omok, also known as Gomoku, is a game where two players each take turn to put a white/black stone on the board one at a time. Players cannot put stones on top of others. The first player that makes a consecutive row of five stones wins the game. You can find more information and strategies about this game <a href="https://en.wikipedia.org/wiki/Gomoku">here</a>.<br></p>
+					<h3>Developer's Note</h3>
+					<p>AI mode for this game is currently not available, but I will update this feature in the near future. Since I made this game to accustom myself to web development, the game may have some bugs. If you found a bug, and want to report it, please contact me <a href="mailto:woongbinchoi@gmail.com">here</a>. Also check <a href="#">my website</a> if you like. </p>
+				</div>
+			</div>
+		</div>
+
+		<div id="dolalertcontainer">
+			<div id="dolalertdiv">
+				<h3>You cannot put a stone there!</h3>
+			</div>
+		</div>
+		
+		<div id="wonalertcontainer">
+			<div id="wondiv">
+				<h3><span id="alertwhowon"></span></h3>
+				<button id="resetclass">Restart!</button>
+				<button id="returnclass" onclick="returntoboard()">Return to Board!</button>
+			</div>
+		</div>
+
+	</div>
+
+	<script src="js/omok.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>﻿
+</body>
+</html>
